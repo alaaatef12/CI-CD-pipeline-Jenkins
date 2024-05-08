@@ -26,19 +26,18 @@ This project focuses on configuring Jenkins to automate the building and testing
       $ git clone "repo_url"    
       $ cd "path/to/the/repo"
       
-    # initialize at least two branches `develop` and `master`
+    # initialize `develop` branch
       $ git checkout -b develop
       $ git push --set-upstream origin develop
 
     # install git flow
-      $ sudo yum install git-flow
-      $ curl -OL https://raw.githubusercontent.com/nvie/gitflow/develop/contrib/gitflow-installer.sh
-      $ chmod +x gitflow-installer.sh
-      $ sudo ./gitflow-installer.sh
-      $ git clone https://github.com/nvie/shFlags.git
-      $ sudo git clone https://github.com/nvie/shFlags.git
-      $ git flow init -d
-      $ git add .
+    $ git clone --recursive https://github.com/petervanderdoes/gitflow-avh.git
+    $ cd gitflow-avh/contrib/
+    $ chmod +x gitflow-installer.sh
+    $ sudo ./gitflow-installer.sh install stable
+    $ sudo yum update
+    $ git flow init
+    $ git branch
   ## 4. Create a Jenkinsfile and Push it to GitHub
 - Create a Jenkinsfile:
 ```groovy
